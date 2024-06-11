@@ -1,0 +1,166 @@
+#slider { 
+    margin: 0 auto;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+.slides {
+    width: 400%;
+    height: 600px;
+    display: flex;
+}
+.slides input {
+    display: none;
+}
+.slide {
+    width: 25%;
+    position: relative;
+    top: 5%;
+}
+.slide img {
+    height: 100%;
+    width: 100%;
+    object-fit:fill;
+}
+
+.manual-navigation {
+    position: absolute;
+    width: 10%;
+    margin-top: -40px;
+    left: 70%;
+    display: flex;
+    z-index: 4;
+}
+.manual-btn {
+    border: 2px solid #FFF;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    z-index: 4;
+}
+.manual-btn:hover{
+    background-color: #FFF;
+}
+#radio1:checked ~ .slide {
+    margin-left: 0;
+    transition: 1s;
+}
+#radio2:checked ~ .slide {
+    margin-left: -25%;
+    transition: 1s;
+}
+#radio3:checked ~ .slide {
+    margin-left: -50%;
+    transition: 1s;
+}
+#radio4:checked ~ .slide {
+    margin-left: -75%;
+    transition: 1s;
+}
+.navigationSlider div{
+    border: 2px solid blue;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    z-index: 3;
+}
+.navigationSlider {
+    position: absolute;
+    width: 10%;
+    left: 70%;
+    margin-top: 560px;
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+}
+.navigationSlider div:not(:last-child), .manual-btn:not(:last-child) {
+    margin-right: 0px;
+}
+#radio1:checked ~ .navigationSlider .auto-btn1, 
+#radio2:checked ~ .navigationSlider .auto-btn2,
+#radio3:checked ~ .navigationSlider .auto-btn3,
+#radio4:checked ~ .navigationSlider .auto-btn4{
+    background-color: #FFF;
+}
+
+.overlayShadowForImages {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.801));
+}
+.title {
+    position: absolute;
+    font-size: 3rem;
+    font-family: Helvetica;
+    font-weight: lighter;
+    height: fit-content;
+    width: 80%;
+    top: 60%;
+    left: 10%;
+    color: #ffffff;
+}
+.titleAbout {
+    height: fit-content;
+    width: 100%;
+    color: #ffffff;
+    text-align: justify;
+    margin-top: 5px;
+    top: 50%;
+    font-size: 1.3rem;
+}
+
+@media screen and (max-width: 900px) {
+    .navigationBar {
+        flex-direction: row-reverse;
+        height: auto;
+    }
+    .buttonMenu {
+        display: inline-block;
+        margin-left: 50px;
+    }
+    .logo {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        transform: translate(-60%, 0%);
+    }
+    .orangeBar, .optionsNav, .manual-navigation, .navigationSlider {
+        display: none;
+    }
+    .menu {
+        display: block;
+    }
+    .slider {
+        width: 100%;
+        height: 600px;
+        overflow: hidden;
+    }
+    .slides {
+        width: 400%;
+        height: 600px;
+        display: flex;
+    }
+    .slide {
+        top: -5%;
+    }
+    .title {
+        font-size: 2rem;
+        top: 60%;
+        left: 10%;
+    }
+    .titleAbout {
+        font-size: 1.15rem;
+    }
+    @keyframes AgoraAlert {
+        0% {
+            top: 120%;
+        }
+        100% {
+            top: 80%;
+        }
+    }
+}

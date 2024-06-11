@@ -1,0 +1,192 @@
+#orangeBarNavigationBar {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+.orangeBar {
+    position: relative;
+    display: flex;
+    height: 2.2rem;
+    width: 100%;
+    align-items: center;
+    background: #f48735;
+}
+.agoraReserva {
+    position: relative;
+    margin-right: 5rem;
+    font-family: Helvetica;
+    font-weight: lighter;
+    height: fit-content;
+    width: fit-content;
+    color: #f1f1f1;
+    cursor: pointer;
+}
+.agoraReserva:hover {
+    color: black;
+    transition: 0.5s;
+}
+
+.navigationBar {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    background: aliceblue;
+    height: 5.5rem;
+    width: 100%;
+    filter: drop-shadow(0rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2));
+}
+.logo {
+    position: static;
+    left: 0%;
+    height: 5rem;
+    margin-left: 8rem;
+    background: none;
+}
+.optionsNav {
+    position: static;
+    list-style: none;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 3.5rem;
+    width: 18.5rem;
+}
+.insta, .phone, .email {
+    background: none;
+    height: 2.5rem;
+    cursor: pointer;
+    filter: grayscale(1);
+}
+.phone, .email {
+    margin-top: -5px;
+}
+header nav ul li {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.textMessengeForNavBar {
+    font-size: 0.9rem;
+    padding: .3rem;
+    color: #d4d4d4;
+    border: .1rem solid black;
+    background-color: #4e4e4e;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    pointer-events: none;
+    visibility: hidden;
+    top: 80%;
+}
+.optionsNav li:hover .textMessengeForNavBar,
+.optionsNav li:hover .insta,
+.optionsNav li:hover .phone,
+.optionsNav li:hover .email{
+    visibility: visible;
+    filter: grayscale(0);
+    transition: 0.5s;
+}
+.AgoraAlertContainer {
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+    animation: none;
+    pointer-events: none;
+}
+.backgroundImageAgoraForAlert {
+    position: absolute;
+    border-radius: 10rem;
+    width: 350px;
+    height: 100px;
+    object-fit: cover;
+}
+.AgoraAlertContainer h2{
+    position: absolute;
+    font-family: Helvetica;
+    font-size: 1.5rem;
+    color: #333;
+    white-space: nowrap;
+    z-index: 1;
+}
+@keyframes AgoraAlert {
+    0% {
+        top: 120%;
+    }
+    100% {
+        top: 90%;
+    }
+}
+
+.menu-item {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    top: 10px;
+    background: none;
+    display: flex;
+    font-family: Helvetica;
+    font-weight: bolder;
+    color: black;
+    cursor: pointer;
+    align-items: center;
+    padding-left: 20px;
+    z-index: 2;
+}
+.menu-item:hover {
+    background-color: #ccc;
+}
+.menu {
+    position: fixed;
+    display: none;
+    top: 90px;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    background-color: #f1f1f1;
+    transition: left 0.4s;
+    z-index: 2;
+}
+.overlayShadowForMenu {
+    position: fixed;
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: 0.4s;
+    z-index: 1;
+}
+.buttonMenu {
+    position: relative;
+    display: none;
+    cursor: pointer;
+    overflow: hidden;
+    background: none;
+    border: none;
+}
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+    overflow: hidden;
+}
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+.change .bar2 {opacity: 0;}
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
