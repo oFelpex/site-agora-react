@@ -5,7 +5,7 @@ import slide3 from './slides/portugues.jpg';
 import slide4 from './slides/ufrn.jpg';
 import './styles.css';
 
-class Slider extends React.Component {
+export class Slider extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -97,4 +97,3 @@ class Slider extends React.Component {
         );
     }
 }
-export default Slider;

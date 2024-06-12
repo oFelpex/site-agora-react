@@ -20,6 +20,7 @@
     width: fit-content;
     color: #f1f1f1;
     cursor: pointer;
+    transition: 0.5s;
 }
 .agoraReserva:hover {
     color: black;
@@ -34,6 +35,7 @@
     height: 5.5rem;
     width: 100%;
     filter: drop-shadow(0rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2));
+    z-index: 3;
 }
 .logo {
     position: static;
@@ -58,6 +60,8 @@
     height: 2.5rem;
     cursor: pointer;
     filter: grayscale(1);
+    transition: 0.5s;
+
 }
 .phone, .email {
     margin-top: -5px;
@@ -82,12 +86,17 @@ header nav ul li {
     pointer-events: none;
     visibility: hidden;
     top: 80%;
+    opacity: 0;
+    transition: 0.5s;
+
+
 }
 .optionsNav li:hover .textMessengeForNavBar,
 .optionsNav li:hover .insta,
 .optionsNav li:hover .phone,
 .optionsNav li:hover .email{
     visibility: visible;
+    opacity: 1;
     filter: grayscale(0);
     transition: 0.5s;
 }
@@ -100,7 +109,7 @@ header nav ul li {
     align-items: center;
     justify-content: center;
     z-index: 9;
-    animation: none;
+    animation: AgoraAlert 1s ease-in-out 1 normal forwards, AgoraAlert 1s ease-in-out 3s 1 reverse forwards;
     pointer-events: none;
 }
 .backgroundImageAgoraForAlert {
@@ -147,20 +156,40 @@ header nav ul li {
 }
 .menu {
     position: fixed;
-    display: none;
     top: 90px;
     left: -200px;
     width: 200px;
     height: 100%;
     background-color: #f1f1f1;
-    transition: left 0.4s;
     z-index: 2;
 }
+.menu.open {
+    animation: openMenu 0.4s ease forwards;
+}
+.menu.close {
+    animation: closeMenu 0.4s ease forwards;
+}
+@keyframes openMenu {
+    0% {
+        left: -300px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+@keyframes closeMenu {
+    0% {
+        left: 0px;
+    }
+    100% {
+        left: -300px;
+    }
+}
+
 .overlayShadowForMenu {
     position: fixed;
     cursor: pointer;
-    pointer-events: none;
-    opacity: 0;
+    opacity: 1;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
@@ -186,7 +215,9 @@ header nav ul li {
 .change .bar1 {
     transform: translate(0, 11px) rotate(-45deg);
 }
-.change .bar2 {opacity: 0;}
+.change .bar2 {
+    opacity: 0;
+}
 .change .bar3 {
     transform: translate(0, -11px) rotate(45deg);
 }
