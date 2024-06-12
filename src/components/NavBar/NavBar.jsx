@@ -4,6 +4,7 @@ import './styles.css';
 import instaIcon from '../../assets/icons - navigation_bar/instagram_icon.png';
 import phoneIcon from '../../assets/icons - navigation_bar/phone_icon.png';
 import emailIcon from '../../assets/icons - navigation_bar/gmail_icon.png';
+import agoraAlert from '../../assets/backgroundAlert.jpg';
 
 class NavBar extends React.Component {
     render() {
@@ -28,7 +29,7 @@ class NavBar extends React.Component {
                     <ul className="optionsNav">
                         <li>
                             <a href="https://www.instagram.com/institutoagoraufrn/" target="_blank">
-                                <img src={instaIcon} class="insta" alt="Logo do Instagram"/>
+                                <img src={instaIcon} className="insta" alt="Logo do Instagram"/>
                                 </a>
                             <div className="textMessengeForNavBar">Acessar o nosso instagram</div>
                         </li>
@@ -47,7 +48,12 @@ class NavBar extends React.Component {
                         <div className="bar3"></div>
                     </button>
                 </nav>
+                <div className="AgoraAlertContainer">
+                    <h2>Número copiado</h2>
+                    <img src={agoraAlert} className="backgroundImageAgoraForAlert"/>
+                </div>
             </header>
+            
         );
     }
 }

@@ -190,3 +190,34 @@ header nav ul li {
 .change .bar3 {
     transform: translate(0, -11px) rotate(45deg);
 }
+
+@media screen and (max-width: 900px) {
+    .navigationBar {
+        flex-direction: row-reverse;
+        height: auto;
+    }
+    .buttonMenu {
+        display: inline-block;
+        margin-left: 50px;
+    }
+    .logo {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        transform: translate(-60%, 0%);
+    }
+    .orangeBar, .optionsNav, .manual-navigation, .navigationSlider {
+        display: none;
+    }
+    .menu {
+        display: block;
+    }
+    @keyframes AgoraAlert {
+        0% {
+            top: 120%;
+        }
+        100% {
+            top: 80%;
+        }
+    }
+}

@@ -1,22 +1,3 @@
-function nextImage() {
-    let count = 2;
-    let interval;
-    const slider = document.getElementById("slider");
-    function startInterval() {
-        interval = setInterval(function() {
-            document.getElementById("radio" + count).checked = true;
-            count++;
-            count = count > 4 ? 1 : count;
-        }, 8000);
-    }
-    slider.addEventListener('mouseenter', () => {
-        clearInterval(interval);
-    });
-    slider.addEventListener('mouseleave', () => {
-        startInterval();
-    });
-    startInterval();
-}
 function closeNavBar() {
     window.addEventListener('scroll', function() {
         const navbar = document.getElementById('orangeBarNavigationBar');
@@ -29,8 +10,6 @@ function closeNavBar() {
         }
     });
 }
-nextImage();
-closeNavBar();
 function openOrCloseMenu(open) {
     const menu = document.querySelector('.menu');
     const overlayForMenu = document.querySelector('.overlayShadowForMenu');
