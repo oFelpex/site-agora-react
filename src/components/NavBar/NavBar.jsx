@@ -10,7 +10,6 @@ export class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isMenuOpen: false,
             alertVisible: false,
             alertMessage: ''
         };
@@ -20,12 +19,10 @@ export class NavBar extends React.Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
-        window.addEventListener('resize', this.handleResize);
     }
 
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
-        window.removeEventListener('resize', this.handleResize);
     }
 
     handleScroll = () => {
@@ -39,15 +36,8 @@ export class NavBar extends React.Component {
         }
     }
 
-    handleResize = () => {
-        if (window.innerWidth > 768) {
-            this.setState({ isMenuOpen: false });
-        }
-    }
 
-    toggleMenu = () => {
-        this.setState((prevState) => ({ isMenuOpen: !prevState.isMenuOpen }));
-    }
+
 
     copyAgoraNumberOrEmail = (type) => {
         let textToCopy = '';
@@ -76,23 +66,11 @@ export class NavBar extends React.Component {
     render() {
         return (
             <header id="orangeBarNavigationBar">
-                <nav id="navigationMenuForMobile">
-                    {this.state.isMenuOpen && (
-                        <div className="overlayShadowForMenu" onClick={this.toggleMenu}></div>)}
-                    <aside className={`menu ${this.state.isMenuOpen ? 'open' : 'close'}`}>
-                        <a href="https://www.instagram.com/institutoagoraufrn/">
-                            <h3 className="menu-item">Instagram</h3>
-                        </a>
-                        <h3 className="menu-item" onClick={() => this.copyAgoraNumberOrEmail(1)}>Telefone</h3>
-                        <h3 className="menu-item" onClick={() => this.copyAgoraNumberOrEmail(2)}>E-mail</h3>
-                        <h3 className="menu-item">Reservas</h3>
-                    </aside>
-                </nav>
                 <div className="orangeBar">
                     <div className="agoraReserva">Ágora Reservas</div>
                 </div>
-                <nav className="navigationBar">
-                    <img src={logoImg} className="logo" alt="Logo do Instituto Ágora - UFRN" />
+                <nav id="navigationBar">
+                    <img src={logoImg} id="logo" alt="Logo do Instituto Ágora - UFRN" />
                     <ul className="optionsNav">
                         <li>
                             <a href="https://www.instagram.com/institutoagoraufrn/" target="_blank" rel="noopener noreferrer">
@@ -109,11 +87,6 @@ export class NavBar extends React.Component {
                             <div className="textMessengeForNavBar">Clique para copiar o E-mail</div>
                         </li>
                     </ul>
-                    <button className={`buttonMenu ${this.state.isMenuOpen ? 'change' : ''}`} onClick={this.toggleMenu}>
-                        <div className="bar1"></div>
-                        <div className="bar2"></div>
-                        <div className="bar3"></div>
-                    </button>
                 </nav>
                 {this.state.alertVisible && (
                     <div className="AgoraAlertContainer" ref={this.alertRef}>

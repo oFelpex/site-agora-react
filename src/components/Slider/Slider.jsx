@@ -8,9 +8,7 @@ import './styles.css';
 export class Slider extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-          count: 1,
-        };
+        this.state = { count: 1 };
         this.interval = null;
       }
     
@@ -51,32 +49,32 @@ export class Slider extends React.Component {
                     <div className="slide about">
                         <img src={slide1} className="image1" alt="Frente do Ágora. Foto: Wallacy Medeiros – CPI/Comunica"/>
                         <div className="overlayShadowForImages">
-                            <div className="title">Conheça mais sobre o Instituto Ágora
-                                <p className="titleAbout">O Instituto tem como objetivo atuar de forma decisiva para a internacionalização da UFRN, aperfeiçoando os conhecimentos de línguas e culturas estrangeiras dos seus alunos, docentes e pessoal técnico adminstrativo e oferecendo o ensino de língua portuguesa e cultura brasileira ao alunos estrangeiros da comunidade interna e externa.</p>
+                            <div className="title">{this.props.title1}
+                                <p className="titleAbout">{this.props.titleAbout1}</p>
                             </div>
                         </div>
                     </div>
                     <div className="slide">
                         <img src={slide2} className="image2" alt="Imagem temporária"/>
                         <div className="overlayShadowForImages">
-                            <h1 className="title">Cursos de formação complementar
-                                <p className="titleAbout">No Instituto Ágora você pode se inscrever para os nossos cursos de formação complementar em línguas como Inglês, Francês, Espanhol, Alemão, Língua Brasileira de Sinais (Libras) e Latim. Os cursos são ofertados para a modalidade presencial sendo eles de 60 horas/aula, tendo duração de um semestre na UFRN. Acesse o edital para mais informações.</p>
+                            <h1 className="title">{this.props.title2}
+                                <p className="titleAbout">{this.props.titleAbout2}</p>
                             </h1>
                         </div>
                     </div>
                     <div className="slide">
                         <img src={slide3} className="image3" alt="Português para estrangeiros"/>
                         <div className="overlayShadowForImages">
-                            <h1 className="title">Sobre Português para estrangeiros
-                                <p className="titleAbout">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus dolores eveniet exercitationem amet fuga, cupiditate illo expedita enim nesciunt dolorum nihil sint voluptatem commodi asperiores aut earum, officia dolorem consectetur!.</p>
+                            <h1 className="title">{this.props.title3}
+                                <p className="titleAbout">{this.props.titleAbout3}</p>
                             </h1>
                         </div>
                     </div>
                     <div className="slide">
                         <img src={slide4} className="image4" alt="Português para estrangeiros"/>
                         <div className="overlayShadowForImages">
-                            <h1 className="title">Olha só a ufrn q linda kk
-                                <p className="titleAbout">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus dolores eveniet exercitationem amet fuga, cupiditate illo expedita enim nesciunt dolorum nihil sint voluptatem commodi asperiores aut earum, officia dolorem consectetur!.</p>
+                            <h1 className="title">{this.props.title4}
+                                <p className="titleAbout">{this.props.titleAbout4}</p>
                             </h1>
                         </div>
                     </div>
