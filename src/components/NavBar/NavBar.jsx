@@ -36,9 +36,6 @@ export class NavBar extends React.Component {
         }
     }
 
-
-
-
     copyAgoraNumberOrEmail = (type) => {
         let textToCopy = '';
         let alertMessage = '';

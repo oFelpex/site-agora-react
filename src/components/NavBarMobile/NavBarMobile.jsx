@@ -1,6 +1,7 @@
 import React from "react";
 import logoImg from '../../assets/agora_logo.png';
 import './styles.css';
+import agoraAlert from '../../assets/backgroundAlert.jpg';
 
 export class NavBarMobile extends React.Component {
     constructor() {
@@ -27,7 +28,7 @@ export class NavBarMobile extends React.Component {
 
     handleScroll = () => {
         const navbar = document.getElementById('navBarMobile');
-        if (window.scrollY >= 768) {
+        if (window.scrollY >= 1000) {
             navbar.style.position = 'absolute';
             navbar.style.top = '800px';
         } else {
@@ -37,7 +38,7 @@ export class NavBarMobile extends React.Component {
     }
 
     handleResize = () => {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 1000) {
             this.setState({ isMenuOpen: false });
         }
     }
@@ -92,6 +93,12 @@ export class NavBarMobile extends React.Component {
                     </button>
                     <img src={logoImg} className="logo" alt="Logo do Instituto Ágora - UFRN" />
                 </nav>
+                {this.state.alertVisible && (
+                    <div className="AgoraAlertContainer" ref={this.alertRef}>
+                        <h2>{this.state.alertMessage}</h2>
+                        <img src={agoraAlert} className="backgroundImageAgoraForAlert" alt="Alerta" />
+                    </div>
+                )}
             </header>
         );
     };

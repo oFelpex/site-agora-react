@@ -113,3 +113,39 @@
 .change .bar3 {
     transform: translate(0, -11px) rotate(45deg);
 }
+
+.AgoraAlertContainer {
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+    animation: AgoraAlert 1s ease-in-out 1 normal forwards, AgoraAlert 1s ease-in-out 3s 1 reverse forwards;
+    pointer-events: none;
+}
+.backgroundImageAgoraForAlert {
+    position: absolute;
+    border-radius: 10rem;
+    width: 350px;
+    height: 100px;
+    object-fit: cover;
+}
+.AgoraAlertContainer h2{
+    position: absolute;
+    font-family: Helvetica;
+    font-size: 1.5rem;
+    color: #333;
+    white-space: nowrap;
+    z-index: 1;
+}
+@keyframes AgoraAlert {
+    0% {
+        top: 120%;
+    }
+    100% {
+        top: 80%;
+    }
+}
