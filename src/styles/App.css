@@ -3,7 +3,10 @@
   padding: 0;
   text-decoration: none;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+
 }
+
 body {
   background-color: aliceblue;
   font-family: Helvetica;

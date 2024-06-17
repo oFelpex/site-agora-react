@@ -6,9 +6,10 @@ import slide3 from './slides/portugues.jpg';
 import slide4 from './slides/ufrn.jpg';
 import './styles.css';
 import 'swiper/css';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
 
 
 export class Slider extends React.Component {
@@ -30,17 +31,24 @@ export class Slider extends React.Component {
         return (
             <section id="container">
                 <Swiper 
+                    loop={false}
+                    autoplay={{
+                        delay: 8000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true
+                    }}
                     slidesPerView={1} 
-                    pagination ={{clickable: true}} 
+                    modules={[Navigation, Pagination, Autoplay]}
+                    pagination={{ clickable: true }}
                     navigation
                 >
                     {this.state.data.map( (item) => (
                         <SwiperSlide key={item.id}>
                             <img src={item.image} alt="Slider" className="slide-item"/>
                             <div className="overlayShadowForImages">
-                                {<h1 className="title">{this.props.title[item.id-1]}
-                                    <p className="titleAbout"></p>{this.props.about[item.id-1]}
-                                </h1>}
+                                <h1>{this.props.title[item.id-1]}
+                                    <p>{this.props.about[item.id-1]}</p>
+                                </h1>
                             </div>
                         </SwiperSlide>
                     ))}
