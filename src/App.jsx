@@ -35,7 +35,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.isMobileScreen);
     return (
       <>
         {this.state.isMobileScreen ? <NavBarMobile /> : <NavBar />}

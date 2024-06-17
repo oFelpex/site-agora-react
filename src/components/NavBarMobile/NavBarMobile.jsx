@@ -17,12 +17,13 @@ export class NavBarMobile extends React.Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
-        window.addEventListener('resize', this.handleResize);
+        this.setState({isMenuOpen: false});
+
     }
 
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
-        window.removeEventListener('resize', this.handleResize);
+        this.setState({isMenuOpen: false});
         
     }
 
@@ -74,9 +75,8 @@ export class NavBarMobile extends React.Component {
         return (
             <header id="navBarMobile">
                 <nav id="navigationMenuForMobile">
-                    {this.state.isMenuOpen && (
-                        <div className="overlayShadowForMenu" onClick={this.toggleMenu}></div>)}
-                    <aside className={`menu ${this.state.isMenuOpen ? 'open' : 'close'}`}>
+                    <div className = {`overlayShadowForMenu ${this.state.isMenuOpen ? 'visible' : ''}`} onClick={this.toggleMenu}></div>
+                    <aside className = {`menu ${this.state.isMenuOpen ? 'open' : ''}`}>
                         <a href="https://www.instagram.com/institutoagoraufrn/">
                             <h3 className="menu-item">Instagram</h3>
                         </a>
