@@ -1,43 +1,41 @@
-
 #container {
     position: relative;
+    top: 7.7rem;
     width: 100%;
-    margin: 0 auto;
 }
 .swiper-button-next,
 .swiper-button-prev {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 50px;
+    height: 50px;
 }
 .swiper-button-next::after,
 .swiper-button-prev::after {
-    font-size: 20px;
     color: white;
     transition: 0.3s;
-
 }
 .swiper-button-next:hover::after,
 .swiper-button-prev:hover::after {
     color: #f48735;
     transition: 0.3s;
 }
-.swiper-button-next.swiper-button-disabled,
-.swiper-button-prev.swiper-button-disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
 .swiper-pagination-bullet.swiper-pagination-bullet {
-    background-color: white;
+    background-color: none;
+    border: 0.1rem solid white;
     opacity: 1;
     transition: 0.3s;
+    width: 12px;
+    height: 12px;
 }
 .swiper-pagination-bullet.swiper-pagination-bullet-active{
     background-color: #f48735;
+    border: none;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active:hover{
+    background-color: #f48735;
 }
 .swiper-pagination-bullet:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #f48735;
+    border: 0.1rem solid #f48735;
 }
 
 .slide-item {
@@ -74,6 +72,9 @@ p {
 }
 
 @media screen and (max-width: 1000px) {
+    #container {
+        top: 6.25rem;
+    }
     .slide-item {
         width: 150%;
         height: 30rem;
@@ -84,7 +85,8 @@ p {
     }
     h1 {
         font-size: 1.8rem;
-        top: 55%;
+        width: 70%;
+        top: 45%;
         font-weight: bold;
     }
     p {

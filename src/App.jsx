@@ -3,6 +3,12 @@ import './styles/App.css';
 import {NavBar} from "./components/NavBar/NavBar";
 import {Slider} from "./components/Slider/Slider";
 import {NavBarMobile} from "./components/NavBarMobile/NavBarMobile";
+import {Agora} from "./components/Agora/Agora";
+import {Editais} from "./components/Editais/Editais";
+import {FormComp} from "./components/FormComp/FormComp";
+import {Port} from "./components/Port/Port";
+import {Footer} from "./components/Footer/Footer";
+
 
 class App extends React.Component {
   constructor() {
@@ -41,8 +47,8 @@ class App extends React.Component {
 
         <Slider title={this.state.textForSlide.map(item => item.title)}
           about={this.state.textForSlide.map(item => item.about)}
-
         />
+        <Footer /> 
       </>
     );
   }

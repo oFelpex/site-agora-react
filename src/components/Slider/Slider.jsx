@@ -31,9 +31,15 @@ export class Slider extends React.Component {
         return (
             <section id="container">
                 <Swiper 
-                    loop={false}
+                    style={{
+                        "--swiper-navigation-size": "4rem",
+                        "--swiper-navigation-top-offset": "50%",
+                        "--swiper-navigation-sides-offset": "10px",
+                        "--swiper-pagination-bullet-horizontal-gap": "0.5rem"
+                    }}
+                    loop={true}
                     autoplay={{
-                        delay: 8000,
+                        delay: 10000,
                         disableOnInteraction: false,
                         pauseOnMouseEnter: true
                     }}

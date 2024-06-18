@@ -17,25 +17,6 @@ export class NavBar extends React.Component {
         this.inputRef = React.createRef();
     }
 
-    componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
-    }
-
-    handleScroll = () => {
-        const navbar = document.getElementById('orangeBarNavigationBar');
-        if (window.scrollY >= 800) {
-            navbar.style.position = 'absolute';
-            navbar.style.top = '800px';
-        } else {
-            navbar.style.position = 'fixed';
-            navbar.style.top = '0px';
-        }
-    }
-
     copyAgoraNumberOrEmail = (type) => {
         let textToCopy = '';
         let alertMessage = '';
